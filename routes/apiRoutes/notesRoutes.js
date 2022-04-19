@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { createNewNote, deleteNote } = require('../../lib/Notes');
-const { db } = require('../../db/db.json');
+const db  = require('../../db/db.json');
 
 //get all notes from database
 router.get('/notes' , (req, res) => {
@@ -17,7 +17,7 @@ router.post('/notes' , (req, res) => {
 
 //delete a note when clicked
 router.delete('/notes/:id' , (req, res) => {
-    const note = deleteNote(req.body, db);
+    const note = deleteNote(req.params.id, db);
     res.json(note);
 });
 
