@@ -4,10 +4,6 @@ const { db } = require('../../db/db.json');
 
 //get all notes from database
 router.get('/notes' , (req, res) => {
-    let result = notes;
-    if (req.query) {
-        result = filterByQuery(req.query, results);
-    }
     res.json(db);
 });
 
